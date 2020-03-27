@@ -51,7 +51,7 @@ typedef enum SENSORS_INFORMATION_TELEMETRY_TAG
 } SENSORS_INFORMATION_TELEMETRY;
 
 // DigitalTwin interface name from service perspective.
-static const char Sensors_InformationInterfaceId[] = "urn:Advantech:{Model_Name}:SensorsInformation:1";
+static const char Sensors_InformationInterfaceId[] = "urn:Advantech:${Model_Name}:SensorsInformation:1";
 static const char Sensors_InformationInterfaceInstanceName[] = "Sensors_Information";
 
 // Telemetry names for this interface.

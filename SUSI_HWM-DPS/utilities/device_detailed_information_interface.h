@@ -37,7 +37,7 @@ typedef enum DEVICE_DETAILED_INFORMATION_READONLY_PROPERTY_TAG
 } DEVICE_DETAILED_INFORMATION_PROPERTY;
 
 // DigitalTwin interface name from service perspective.
-static const char Device_Detailed_InformationInterfaceId[] = "urn:Advantech:{Model_Name}:DeviceDetailedInformation:1";
+static const char Device_Detailed_InformationInterfaceId[] = "urn:Advantech:${Model_Name}:DeviceDetailedInformation:1";
 static const char Device_Detailed_InformationInterfaceInstanceName[] = "Device_Detailed_Information";
 
 // Telemetry names for this interface.

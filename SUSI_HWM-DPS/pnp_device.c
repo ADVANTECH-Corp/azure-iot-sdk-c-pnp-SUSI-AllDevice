@@ -17,7 +17,7 @@
 
 #define DEFAULT_SEND_TELEMETRY_INTERVAL_MS 10000
 
-#define DEVICE_CAPABILITY_MODEL_URI "urn:Advantech:{Model_Name}:1"
+#define DEVICE_CAPABILITY_MODEL_URI "urn:Advantech:${Model_Name}:1"
 
 static DIGITALTWIN_INTERFACE_CLIENT_HANDLE interfaceClientHandles[DIGITALTWIN_INTERFACE_NUM];
 static TICK_COUNTER_HANDLE tickcounter = NULL;
