@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umock_c.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umock_c_negative_tests.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umockalloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umockcall.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umockcallrecorder.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umocktypename.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umocktypes.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umocktypes_bool.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umocktypes_c.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umocktypes_stdint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umocktypes_charptr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umockcallpairs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umockstring.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umockautoignoreargs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umock_log.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umock_c.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umock_c_internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umock_c_negative_tests.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umock_c_prod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umockalloc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umockcall.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umockcallrecorder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umocktypename.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umocktypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umocktypes_bool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umocktypes_c.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umocktypes_stdint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umocktypes_charptr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umockcallpairs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umockstring.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umockautoignoreargs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umock_log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\azure-iot-sdk-c\deps\umock-c\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umock_c_lib_requirements_with_ids.md">
+      <Filter>devdoc</Filter>
+    </None>
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umock_c_negative_tests_requirements.md">
+      <Filter>devdoc</Filter>
+    </None>
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umock_c_requirements.md">
+      <Filter>devdoc</Filter>
+    </None>
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umockalloc_requirements.md">
+      <Filter>devdoc</Filter>
+    </None>
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umockautoignoreargs_requirements.md">
+      <Filter>devdoc</Filter>
+    </None>
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umockcall_requirements.md">
+      <Filter>devdoc</Filter>
+    </None>
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umockcallpairs_requirements.md">
+      <Filter>devdoc</Filter>
+    </None>
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umockcallrecorder_requirements.md">
+      <Filter>devdoc</Filter>
+    </None>
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umockstring_requirements.md">
+      <Filter>devdoc</Filter>
+    </None>
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umocktypename_requirements.md">
+      <Filter>devdoc</Filter>
+    </None>
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umocktypes_bool_requirements.md">
+      <Filter>devdoc</Filter>
+    </None>
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umocktypes_c_requirements.md">
+      <Filter>devdoc</Filter>
+    </None>
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umocktypes_charptr_requirements.md">
+      <Filter>devdoc</Filter>
+    </None>
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umocktypes_requirements.md">
+      <Filter>devdoc</Filter>
+    </None>
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umocktypes_stdint_requirements.md">
+      <Filter>devdoc</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{A895157F-76AE-3C18-AE9A-036B17B2667B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{194CFB88-362B-37E7-8150-6A32310E6A2D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="devdoc">
+      <UniqueIdentifier>{8E528A32-9548-367F-B7B3-3D2082E2639B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

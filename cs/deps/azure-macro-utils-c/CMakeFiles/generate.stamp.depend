@@ -1,0 +1,11 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.15/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
+C:/Program Files/CMake/share/cmake-3.15/Modules/CMakePackageConfigHelpers.cmake
+C:/Program Files/CMake/share/cmake-3.15/Modules/CTest.cmake
+C:/Program Files/CMake/share/cmake-3.15/Modules/CTestTargets.cmake
+C:/Program Files/CMake/share/cmake-3.15/Modules/CTestUseLaunchers.cmake
+C:/Program Files/CMake/share/cmake-3.15/Modules/DartConfiguration.tcl.in
+C:/Program Files/CMake/share/cmake-3.15/Modules/GNUInstallDirs.cmake
+C:/Program Files/CMake/share/cmake-3.15/Modules/WriteBasicConfigVersionFile.cmake
+D:/azure-iot-sdk-c/deps/azure-macro-utils-c/CMakeLists.txt
+D:/azure-iot-sdk-c/deps/azure-macro-utils-c/configs/azure_macro_utils_cConfig.cmake

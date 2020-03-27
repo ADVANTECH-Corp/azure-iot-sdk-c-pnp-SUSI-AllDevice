@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6824078D-21FC-3ECB-A242-48FC10740104}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>umock_c</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\azure-iot-sdk-c\cs\deps\umock-c\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">umock_c.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">umock_c</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\azure-iot-sdk-c\cs\deps\umock-c\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">umock_c.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">umock_c</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\azure-iot-sdk-c\cs\deps\umock-c\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">umock_c.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">umock_c</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\azure-iot-sdk-c\cs\deps\umock-c\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">umock_c.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">umock_c</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\azure-iot-sdk-c\deps\azure-macro-utils-c\inc;D:\azure-iot-sdk-c\deps\umock-c\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4232</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\azure-iot-sdk-c\deps\azure-macro-utils-c\inc;D:\azure-iot-sdk-c\deps\umock-c\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\azure-iot-sdk-c\deps\azure-macro-utils-c\inc;D:\azure-iot-sdk-c\deps\umock-c\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\azure-iot-sdk-c\deps\azure-macro-utils-c\inc;D:\azure-iot-sdk-c\deps\umock-c\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4232</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\azure-iot-sdk-c\deps\azure-macro-utils-c\inc;D:\azure-iot-sdk-c\deps\umock-c\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\azure-iot-sdk-c\deps\azure-macro-utils-c\inc;D:\azure-iot-sdk-c\deps\umock-c\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\azure-iot-sdk-c\deps\azure-macro-utils-c\inc;D:\azure-iot-sdk-c\deps\umock-c\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4232</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\azure-iot-sdk-c\deps\azure-macro-utils-c\inc;D:\azure-iot-sdk-c\deps\umock-c\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\azure-iot-sdk-c\deps\azure-macro-utils-c\inc;D:\azure-iot-sdk-c\deps\umock-c\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\azure-iot-sdk-c\deps\azure-macro-utils-c\inc;D:\azure-iot-sdk-c\deps\umock-c\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4232</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\azure-iot-sdk-c\deps\azure-macro-utils-c\inc;D:\azure-iot-sdk-c\deps\umock-c\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\azure-iot-sdk-c\deps\azure-macro-utils-c\inc;D:\azure-iot-sdk-c\deps\umock-c\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\azure-iot-sdk-c\deps\umock-c\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/azure-iot-sdk-c/deps/umock-c/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/azure-iot-sdk-c -BD:/azure-iot-sdk-c/cs --check-stamp-file D:/azure-iot-sdk-c/cs/deps/umock-c/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.15\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeConfigurableFile.in;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CTest.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CTestTargets.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CTestUseLaunchers.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\DartConfiguration.tcl.in;C:\Program Files\CMake\share\cmake-3.15\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\WriteBasicConfigVersionFile.cmake;D:\azure-iot-sdk-c\cs\CMakeFiles\CheckIncludeFiles\HAVE_STDBOOL_H.c;D:\azure-iot-sdk-c\cs\CMakeFiles\CheckIncludeFiles\HAVE_STDINT_H.c;D:\azure-iot-sdk-c\deps\umock-c\configs\umock_cConfig.cmake;D:\azure-iot-sdk-c\deps\umock-c\configs\umock_cFunctions.cmake;D:\azure-iot-sdk-c\deps\umock-c\dependencies.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\azure-iot-sdk-c\cs\deps\umock-c\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/azure-iot-sdk-c/deps/umock-c/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/azure-iot-sdk-c -BD:/azure-iot-sdk-c/cs --check-stamp-file D:/azure-iot-sdk-c/cs/deps/umock-c/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.15\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeConfigurableFile.in;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CTest.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CTestTargets.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CTestUseLaunchers.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\DartConfiguration.tcl.in;C:\Program Files\CMake\share\cmake-3.15\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\WriteBasicConfigVersionFile.cmake;D:\azure-iot-sdk-c\cs\CMakeFiles\CheckIncludeFiles\HAVE_STDBOOL_H.c;D:\azure-iot-sdk-c\cs\CMakeFiles\CheckIncludeFiles\HAVE_STDINT_H.c;D:\azure-iot-sdk-c\deps\umock-c\configs\umock_cConfig.cmake;D:\azure-iot-sdk-c\deps\umock-c\configs\umock_cFunctions.cmake;D:\azure-iot-sdk-c\deps\umock-c\dependencies.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\azure-iot-sdk-c\cs\deps\umock-c\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/azure-iot-sdk-c/deps/umock-c/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/azure-iot-sdk-c -BD:/azure-iot-sdk-c/cs --check-stamp-file D:/azure-iot-sdk-c/cs/deps/umock-c/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.15\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeConfigurableFile.in;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CTest.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CTestTargets.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CTestUseLaunchers.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\DartConfiguration.tcl.in;C:\Program Files\CMake\share\cmake-3.15\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\WriteBasicConfigVersionFile.cmake;D:\azure-iot-sdk-c\cs\CMakeFiles\CheckIncludeFiles\HAVE_STDBOOL_H.c;D:\azure-iot-sdk-c\cs\CMakeFiles\CheckIncludeFiles\HAVE_STDINT_H.c;D:\azure-iot-sdk-c\deps\umock-c\configs\umock_cConfig.cmake;D:\azure-iot-sdk-c\deps\umock-c\configs\umock_cFunctions.cmake;D:\azure-iot-sdk-c\deps\umock-c\dependencies.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\azure-iot-sdk-c\cs\deps\umock-c\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/azure-iot-sdk-c/deps/umock-c/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/azure-iot-sdk-c -BD:/azure-iot-sdk-c/cs --check-stamp-file D:/azure-iot-sdk-c/cs/deps/umock-c/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.15\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeConfigurableFile.in;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CTest.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CTestTargets.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CTestUseLaunchers.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\DartConfiguration.tcl.in;C:\Program Files\CMake\share\cmake-3.15\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\WriteBasicConfigVersionFile.cmake;D:\azure-iot-sdk-c\cs\CMakeFiles\CheckIncludeFiles\HAVE_STDBOOL_H.c;D:\azure-iot-sdk-c\cs\CMakeFiles\CheckIncludeFiles\HAVE_STDINT_H.c;D:\azure-iot-sdk-c\deps\umock-c\configs\umock_cConfig.cmake;D:\azure-iot-sdk-c\deps\umock-c\configs\umock_cFunctions.cmake;D:\azure-iot-sdk-c\deps\umock-c\dependencies.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\azure-iot-sdk-c\cs\deps\umock-c\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umock_c.c" />
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umock_c_negative_tests.c" />
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umockalloc.c" />
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umockcall.c" />
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umockcallrecorder.c" />
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umocktypename.c" />
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umocktypes.c" />
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umocktypes_bool.c" />
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umocktypes_c.c" />
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umocktypes_stdint.c" />
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umocktypes_charptr.c" />
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umockcallpairs.c" />
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umockstring.c" />
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umockautoignoreargs.c" />
+    <ClCompile Include="D:\azure-iot-sdk-c\deps\umock-c\src\umock_log.c" />
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umock_c.h" />
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umock_c_internal.h" />
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umock_c_negative_tests.h" />
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umock_c_prod.h" />
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umockalloc.h" />
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umockcall.h" />
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umockcallrecorder.h" />
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umocktypename.h" />
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umocktypes.h" />
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umocktypes_bool.h" />
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umocktypes_c.h" />
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umocktypes_stdint.h" />
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umocktypes_charptr.h" />
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umockcallpairs.h" />
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umockstring.h" />
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umockautoignoreargs.h" />
+    <ClInclude Include="D:\azure-iot-sdk-c\deps\umock-c\inc\umock_c\umock_log.h" />
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umock_c_lib_requirements_with_ids.md" />
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umock_c_negative_tests_requirements.md" />
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umock_c_requirements.md" />
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umockalloc_requirements.md" />
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umockautoignoreargs_requirements.md" />
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umockcall_requirements.md" />
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umockcallpairs_requirements.md" />
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umockcallrecorder_requirements.md" />
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umockstring_requirements.md" />
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umocktypename_requirements.md" />
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umocktypes_bool_requirements.md" />
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umocktypes_c_requirements.md" />
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umocktypes_charptr_requirements.md" />
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umocktypes_requirements.md" />
+    <None Include="D:\azure-iot-sdk-c\deps\umock-c\devdoc\umocktypes_stdint_requirements.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\azure-iot-sdk-c\cs\ZERO_CHECK.vcxproj">
+      <Project>{B26BB200-DFAD-3083-B941-04FB85387418}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
