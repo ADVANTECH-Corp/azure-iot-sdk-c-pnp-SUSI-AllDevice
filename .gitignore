@@ -176,8 +176,8 @@ $RECYCLE.BIN/
 *.lastbuildstate
 *.idb
 *.exp
-*.lib
-*.dll
+#*.lib
+#*.dll
 
 # Visual Studio Temporary files
 *.VC.db
