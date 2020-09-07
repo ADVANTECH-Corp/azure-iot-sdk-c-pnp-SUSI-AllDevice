@@ -42,7 +42,7 @@ int gettimeofday(struct timeval* tp, void* tzp)
 #define Payload_Buffer_Size 256
 
 char* gLastConnectedAt = NULL;
-
+extern char g_ModelName[];
 
 void SendTelemetry_Succeeded_Callback(const char* interfaceName, const char* telemetryName)
 {

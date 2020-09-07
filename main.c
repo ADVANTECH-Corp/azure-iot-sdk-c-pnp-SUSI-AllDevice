@@ -37,6 +37,10 @@
 #include "device.h"
 #include "impl.h"
 
+// This device's PnP ModelId.
+char g_ModelId[128] = "dtmi:Advantech:UTC_520;2";
+char g_ModelName[64] = "UTC-520";
+
 // Environment variable used to specify how app connects to hub and the two possible values
 static const char g_securityTypeEnvironmentVariable[] = "DPS";
 static const char g_securityTypeConnectionStringValue[] = "connectionString";
@@ -47,26 +51,14 @@ static const char g_connectionStringEnvironmentVariable[] = "IOTHUB_DEVICE_CONNE
 
 #ifdef USE_PROV_MODULE_FULL
 
-#if 0
 // Environment variable used to specify this application's DPS id scope
-static const char g_dpsIdScopeEnvironmentVariable[] = "0ne00166C5F";
+char g_dpsIdScopeEnvironmentVariable[128] = "{}";
 
 // Environment variable used to specify this application's DPS device id
-static const char g_dpsDeviceIdEnvironmentVariable[] = "Test001";
+char g_dpsDeviceIdEnvironmentVariable[128] = "{}";
 
 // Environment variable used to specify this application's DPS device key
-static const char g_dpsDeviceKeyEnvironmentVariable[] = "Iei7IkI3jv6Qul34oQ0FMJjsUEmA+EVmI1wmStq9HzT73Rl0L2sEznS8M9ZRtGB24/nRzSA+rprJIq3azgIIrg==";
-#else
-// Environment variable used to specify this application's DPS id scope
-static const char g_dpsIdScopeEnvironmentVariable[] = "0ne000FFA42";
-
-// Environment variable used to specify this application's DPS device id
-static const char g_dpsDeviceIdEnvironmentVariable[] = "b727dc75-db46-4077-a581-e7a881123eb3";
-
-// Environment variable used to specify this application's DPS device key
-static const char g_dpsDeviceKeyEnvironmentVariable[] = "fm9ceCCTkWq9IFYZK+nQKoxMGCAbDP1e23peS9R5WEo=";
-#endif
-
+char g_dpsDeviceKeyEnvironmentVariable[128] = "{}";
 
 
 // Environment variable used to optionally specify this application's DPS id scope
@@ -87,7 +79,7 @@ static unsigned int g_sleepBetweenPollsMs = 100;
 
 // Every time the main loop wakes up, on the g_sendTelemetryPollInterval(th) pass will send a telemetry message.
 // So we will send telemetry every (g_sendTelemetryPollInterval * g_sleepBetweenPollsMs) milliseconds; 60 seconds as currently configured.
-static const int g_sendTelemetryPollInterval = 10;
+static const int g_sendTelemetryPollInterval = 30;
 
 // Whether verbose tracing at the IoTHub client is enabled or not.
 static bool g_hubClientTraceEnabled = true;
@@ -509,8 +501,26 @@ static IOTHUB_DEVICE_CLIENT_LL_HANDLE CreateAndConfigureDeviceClientHandleForPnP
     return deviceHandle;
 }
 
-int main(void)
+int main(int argc, char **argv)
 {
+    if (argc < 6) {
+        printf("Please use \"PNP_SUSI.exe {model id} {model version} {dps id scope} {dps device id} {dps device key}\"\n");
+        printf("ex: PNP_SUSI.exe \"UTC_520\" \"2\" \"scope\" \"123-456\" \"dkfjiefj=\"\n");
+    }
+
+    sprintf(g_ModelId, "dtmi:Advantech:%s;%s", argv[1], argv[2]);
+    sprintf(g_ModelName, "%s", argv[1]);
+
+    printf("your model id:\t%s\n", g_ModelId);
+
+    strcpy(g_dpsIdScopeEnvironmentVariable, argv[3]);
+    strcpy(g_dpsDeviceIdEnvironmentVariable, argv[4]);
+    strcpy(g_dpsDeviceKeyEnvironmentVariable, argv[5]);
+
+    printf("dps id scope: \t%s\n", g_dpsIdScopeEnvironmentVariable);
+    printf("dps model id: \t%s\n", g_dpsDeviceIdEnvironmentVariable);
+    printf("dps model key:\t%s\n", g_dpsDeviceKeyEnvironmentVariable);
+
     IOTHUB_DEVICE_CLIENT_LL_HANDLE deviceClientLL = NULL;
 
     if (GetConnectionSettingsFromEnvironment() == false)

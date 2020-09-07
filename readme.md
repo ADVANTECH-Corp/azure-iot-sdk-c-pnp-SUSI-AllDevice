@@ -1,8 +1,6 @@
-# Use generated code in your device project
+# Use the code in your device project
 
-One of the features VS Code Digital Twin tooling provides is generating stub code based on the Device Capability Model (DCM) you specified.
-
-Follow the steps to use the generated code with the Azure IoT Device C SDK source to compile a device app.
+Follow the steps to use the code with the Azure IoT Device C SDK source to compile a device app.
 
 For more details about setting up your development environment for compiling the C Device SDK. Check the [instructions](https://github.com/Azure/azure-iot-sdk-c/blob/master/iothub_client/readme.md#compiling-the-c-device-sdk) for each platform.
 
@@ -16,33 +14,11 @@ For more details about setting up your development environment for compiling the
 
 1. Install [CMake](https://cmake.org/). Make sure it is in your PATH by typing `cmake -version` from a command prompt. CMake will be used to create Visual Studio projects to build libraries and samples.
 
-1. Clone the preview release of the SDK to your local machine using the `public-preview` branch
+1. Clone the the SDK to your local machine using the `refresh-preview` branch
     ```bash
-    git clone https://github.com/Azure/azure-iot-sdk-c --recursive -b public-preview
+    git clone --recursive --single-branch --branch refresh-preview git@github.com:ADVANTECH-Corp/azure-iot-sdk-c-pnp-SUSI-AllDevice.git
     ```
     > The `--recursive` argument instructs git to clone other GitHub repos this SDK depends on. Dependencies are listed [here](https://github.com/Azure/azure-iot-sdk-c/blob/master/.gitmodules).
-
-1. Copy the folder of **SUSI_HWM-DPS** with the generated code into the source folder **azure-iot-sdk-c-pnp-SUSI_AllDevice** .
-
-1. In order to connect to IoT Central:
-    * You need to have provisioned a private preview IoT Central instance. See [here](https://github.com/Azure/Azure-IoT-PnP-Preview/blob/master/docs/tutorial.md) for more end-to-end setup instructions.
-    * Open `main.c`. Specify paramaters requested by the commented **TODO's** for your configuration.
-
-      ```c
-      // TODO: Specify DPS scope ID if you intend on using IoT Central.
-      static const char* dpsIdScope = "[DPS Id Scope]";
-
-      // TODO: Specify symmetric keys if you intend on using IoT Central and symmetric key based auth.
-      static const char* sasKey = "[DPS symmetric key]";
-
-      // TODO: specify your device registration ID
-      static const char* registrationId = "[registration Id]";
-      ```
-
-1. Open the `CMakeLists.txt` in the **azure-iot-sdk-c-pnp-SUSI-AllDevice** folder. Include the **SUSI_HWM-DPS** folder so that it will be built together with the Device SDK. Add the line below to the end of the file.
-    ```txt
-    add_subdirectory(SUSI_HWM-DPS)
-    ```
 
 1. In the same **azure-iot-sdk-c-pnp-SUSI-AllDevice** folder, create a folder to contain the compiled app.
     ```bash
@@ -52,13 +28,13 @@ For more details about setting up your development environment for compiling the
 
 1. In the **cmake** folder you just created, run CMake to build the entire folder of Device SDK including the generated app code.
     ```bash
-    cmake .. -Duse_prov_client=ON -Dhsm_type_symm_key:BOOL=ON -Dskip_samples:BOOL=ON
+    cmake ..
     cmake --build . -- /m /p:Configuration=Release
     ```
 
 1. Once the build has succeeded, you can test it by invoking the following command.
     ```bash
-    \\SUSI_HWM-DPS\\Release\\SUSI_HWM-DPS.exe
+    Release\\PNP_SUSI.exe {model id} {model version} {dps id scope} {dps device id} {dps device key}
     ```
 
 ## Ubuntu
@@ -75,33 +51,11 @@ For more details about setting up your development environment for compiling the
     gcc --version
     ```
 
-1. Clone the preview release of the SDK to your local machine using the `public-preview` branch
+1. Clone the preview release of the SDK to your local machine using the `refresh-preview` branch
     ```bash
-    git clone https://github.com/Azure/azure-iot-sdk-c --recursive -b public-preview
+    git clone --recursive --single-branch --branch refresh-preview git@github.com:ADVANTECH-Corp/azure-iot-sdk-c-pnp-SUSI-AllDevice.git
     ```
     > The `--recursive` argument instructs git to clone other GitHub repos this SDK depends on. Dependencies are listed [here](https://github.com/Azure/azure-iot-sdk-c/blob/master/.gitmodules).
-
-1. Copy the folder of **SUSI_HWM-DPS** with the generated code into the source folder **azure-iot-sdk-c-pnp-SUSI-AllDevice** .
-
-1. In order to connect to IoT Central:
-    * You need to have provisioned a private preview IoT Central instance. See [here](https://github.com/Azure/Azure-IoT-PnP-Preview/blob/master/docs/tutorial.md) for more end-to-end setup instructions.
-    * Open `main.c`. Specify paramaters requested by the commented **TODO's** for your configuration.
-
-      ```c
-      // TODO: Specify DPS scope ID if you intend on using DPS / IoT Central.
-      static const char *dpsIdScope = "[DPS Id Scope]";
-      
-      // TODO: Specify symmetric keys if you intend on using DPS / IoT Central and symmetric key based auth.
-      static const char *sasKey = "[DPS symmetric key]";
-      
-      // TODO: specify your device registration ID
-      static const char *registrationId = "[device registration Id]";
-      ```
-
-1. Open the `CMakeLists.txt` in the **azure-iot-sdk-c-pnp-SUSI-AllDevice** folder. Include the **SUSI_HWM-DPS** folder so that it will be built together with the Device SDK. Add the line below to the end of the file.
-    ```txt
-    add_subdirectory(SUSI_HWM-DPS)
-    ```
 
 1. In the same **azure-iot-sdk-c-pnp-SUSI-AllDevice** folder, create a folder to contain the compiled app.
     ```bash
@@ -111,11 +65,11 @@ For more details about setting up your development environment for compiling the
 
 1. In the **cmake** folder you just created, run CMake to build the entire folder of Device SDK including the generated app code.
     ```bash
-    cmake .. -Duse_prov_client=ON -Dhsm_type_symm_key:BOOL=ON -Dskip_samples:BOOL=ON
+    cmake ..
     cmake --build .
     ```
 
 1. Once the build has succeeded, you can test it by invoking the following command.
     ```bash
-    ./SUSI_HWM-DPS/SUSI_HWM-DPS
+    ./Release/PNP_SUSI {model id} {model version} {dps id scope} {dps device id} {dps device key}
     ```
