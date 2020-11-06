@@ -13,23 +13,6 @@
 typedef char* (*Property_Read)();
 
 Property_Read g_Property_Readfuncs[] = {
-    /*Device_Detailed_Information_Property_GetDeviceName,
-    Device_Detailed_Information_Property_GetAgentID,
-    Device_Detailed_Information_Property_GetDeviceGroups,
-    Device_Detailed_Information_Property_GetWakeOnLAN,
-    Device_Detailed_Information_Property_GetConnectionStatus,
-    Device_Detailed_Information_Property_GetAutoReport,
-    Device_Detailed_Information_Property_GetStatusMessage,
-    Device_Detailed_Information_Property_GetProduct,
-    Device_Detailed_Information_Property_GetManufacturer,
-    Device_Detailed_Information_Property_GetVersion,
-    Device_Detailed_Information_Property_GetPlatform,
-    Device_Detailed_Information_Property_GetOperatingSystem,
-    Device_Detailed_Information_Property_GetMAC,
-    Device_Detailed_Information_Property_GetCPU,
-    Device_Detailed_Information_Property_GetMemory,
-    Device_Detailed_Information_Property_GetGrafanaFolder,
-    Device_Detailed_Information_Property_GetGrafanaBoard,*/
     Device_Detailed_Information_Property_GetBiosVersion,
     Device_Detailed_Information_Property_GetECFirmware,
     Device_Detailed_Information_Property_GetDriverVersion,
@@ -44,27 +27,29 @@ Property_Read g_Property_Readfuncs[] = {
     DeviceInfo_Property_GetProcessorArchitecture,
     DeviceInfo_Property_GetProcessorManufacturer,
     DeviceInfo_Property_GetTotalStorage,
-    DeviceInfo_Property_GetTotalMemory
+    DeviceInfo_Property_GetTotalMemory,
 };
 
+const char* g_Property_Componentnames[] = {
+    "Device_Detailed_Information",
+    "Device_Detailed_Information",
+    "Device_Detailed_Information",
+    "Device_Detailed_Information",
+    "Device_Detailed_Information",
+    "Device_Detailed_Information",
+
+    "deviceInfo",
+    "deviceInfo",
+    "deviceInfo",
+    "deviceInfo",
+    "deviceInfo",
+    "deviceInfo",
+    "deviceInfo",
+    "deviceInfo",
+};
+
+
 const char* g_Property_Readnames[] = {
-    /*"DeviceName",
-    "AgentID",
-    "DeviceGroups",
-    "WakeOnLAN",
-    "ConnectionStatus",
-    "AutoReport",
-    "StatusMessage",
-    "Product",
-    "Manufacturer",
-    "Version",
-    "Platform",
-    "OperatingSystem",
-    "MAC",
-    "CPU",
-    "Memory",
-    "GrafanaFolder",
-    "GrafanaBoard",*/
     "BiosVersion",
     "ECFirmware",
     "DriverVersion",
@@ -79,7 +64,8 @@ const char* g_Property_Readnames[] = {
     "processorArchitecture",
     "processorManufacturer",
     "totalStorage",
-    "totalMemory"
+    "totalMemory",
+
 };
 
 enum {
@@ -88,23 +74,6 @@ enum {
     TYPE_DATETIME
 };
 const int g_Property_Readtypes[] = {
-    /*TYPE_STRING,
-    TYPE_STRING,
-    TYPE_STRING,
-    TYPE_STRING,
-    TYPE_STRING,
-    TYPE_STRING,
-    TYPE_STRING,
-    TYPE_STRING,
-    TYPE_STRING,
-    TYPE_STRING,
-    TYPE_STRING,
-    TYPE_STRING,
-    TYPE_STRING,
-    TYPE_STRING,
-    TYPE_STRING,
-    TYPE_STRING,
-    TYPE_STRING,*/
     TYPE_STRING,
     TYPE_STRING,
     TYPE_STRING,
@@ -119,7 +88,7 @@ const int g_Property_Readtypes[] = {
     TYPE_STRING,
     TYPE_STRING,
     TYPE_DOUBLE,
-    TYPE_DOUBLE
+    TYPE_DOUBLE,
 };
 
 
@@ -140,43 +109,80 @@ void Property_Send(IOTHUB_DEVICE_CLIENT_LL_HANDLE deviceClientLL, char *stringBu
     }
 }
 
-void Property_Send_Double(IOTHUB_DEVICE_CLIENT_LL_HANDLE deviceClientLL, char *name, char* value)
+void Property_Send_Double(IOTHUB_DEVICE_CLIENT_LL_HANDLE deviceClientLL, char *component, char *name, char* value)
 {
-    char stringBuffer[32];
+    char stringBuffer[128];
     const char BodyFormat[] = "{\"%s\":%s}";
-    if (snprintf(stringBuffer, sizeof(stringBuffer), BodyFormat, name, value) < 0)
-    {
-        printf("snprintf of current temperature telemetry failed");
+    const char BodyFormatWithComponent[] = "{\"""%s\":{\"__t\":\"c\",\"%s\":%s}}";
+
+    if (component == NULL || strlen(component) == 0) {
+        if (snprintf(stringBuffer, sizeof(stringBuffer), BodyFormat, name, value) < 0)
+        {
+            printf("snprintf of current property failed");
+        }
+        else {
+            Property_Send(deviceClientLL, stringBuffer);
+        }
     }
     else {
-        Property_Send(deviceClientLL, stringBuffer);
+        if (snprintf(stringBuffer, sizeof(stringBuffer), BodyFormatWithComponent, component, name, value) < 0)
+        {
+            printf("snprintf of current property failed");
+        }
+        else {
+            Property_Send(deviceClientLL, stringBuffer);
+        }
     }
 }
 
-void Property_Send_String(IOTHUB_DEVICE_CLIENT_LL_HANDLE deviceClientLL, char* name, char* value)
+void Property_Send_String(IOTHUB_DEVICE_CLIENT_LL_HANDLE deviceClientLL, char* component, char* name, char* value)
 {
     char stringBuffer[128];
     const char BodyFormat[] = "{\"%s\":\"%s\"}";
-    if (snprintf(stringBuffer, sizeof(stringBuffer), BodyFormat, name, value) < 0)
-    {
-        printf("snprintf of current temperature telemetry failed");
+    const char BodyFormatWithComponent[] = "{\"""%s\":{\"__t\":\"c\",\"%s\":\"%s\"}}";
+    if (component == NULL || strlen(component) == 0) {
+        if (snprintf(stringBuffer, sizeof(stringBuffer), BodyFormat, name, value) < 0)
+        {
+            printf("snprintf of current property failed");
+        }
+        else {
+            Property_Send(deviceClientLL, stringBuffer);
+        }
     }
     else {
-        Property_Send(deviceClientLL, stringBuffer);
+        if (snprintf(stringBuffer, sizeof(stringBuffer), BodyFormatWithComponent, component, name, value) < 0)
+        {
+            printf("snprintf of current property failed");
+        }
+        else {
+            Property_Send(deviceClientLL, stringBuffer);
+        }
     }
 
 }
 
-void Property_Send_Datetime(IOTHUB_DEVICE_CLIENT_LL_HANDLE deviceClientLL, char* name, char* value)
+void Property_Send_Datetime(IOTHUB_DEVICE_CLIENT_LL_HANDLE deviceClientLL, char* component, char* name, char* value)
 {
     char stringBuffer[128];
     const char BodyFormat[] = "{\"%s\":\"%s\"}";
-    if (snprintf(stringBuffer, sizeof(stringBuffer), BodyFormat, name, value) < 0)
-    {
-        printf("snprintf of current temperature telemetry failed");
+    const char BodyFormatWithComponent[] = "{\"""%s\":{\"__t\":\"c\",\"%s\":\"%s\"}}";
+    if (component == NULL || strlen(component) == 0) {
+        if (snprintf(stringBuffer, sizeof(stringBuffer), BodyFormat, name, value) < 0)
+        {
+            printf("snprintf of current temperature telemetry failed");
+        }
+        else {
+            Property_Send(deviceClientLL, stringBuffer);
+        }
     }
     else {
-        Property_Send(deviceClientLL, stringBuffer);
+        if (snprintf(stringBuffer, sizeof(stringBuffer), BodyFormatWithComponent, component, name, value) < 0)
+        {
+            printf("snprintf of current temperature telemetry failed");
+        }
+        else {
+            Property_Send(deviceClientLL, stringBuffer);
+        }
     }
 }
 
@@ -189,20 +195,20 @@ void Property_Send_All(IOTHUB_DEVICE_CLIENT_LL_HANDLE deviceClientLL)
             case TYPE_DOUBLE:
             {
                 char* value = g_Property_Readfuncs[i]();
-                Property_Send_Double(deviceClientLL, g_Property_Readnames[i], value);
+                Property_Send_Double(deviceClientLL, g_Property_Componentnames[i], g_Property_Readnames[i], value);
             }
             break;
             case TYPE_DATETIME:
             {
                 char* value = g_Property_Readfuncs[i]();
-                Property_Send_Datetime(deviceClientLL, g_Property_Readnames[i], value);
+                Property_Send_Datetime(deviceClientLL, g_Property_Componentnames[i], g_Property_Readnames[i], value);
             }
             break;
             case TYPE_STRING:
             default:
             {
                 char* value = g_Property_Readfuncs[i]();
-                Property_Send_String(deviceClientLL, g_Property_Readnames[i], value);
+                Property_Send_String(deviceClientLL, g_Property_Componentnames[i], g_Property_Readnames[i], value);
             }
             break;
         }

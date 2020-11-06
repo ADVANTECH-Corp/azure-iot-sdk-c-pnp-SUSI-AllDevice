@@ -35,6 +35,30 @@ Telemetry_Read g_Telemetry_Readfuncs[] = {
     Sensors_Information_Telemetry_ReadFcpu2
 };
 
+
+const char* g_Telemetry_Componentnames[] = {
+    "Sensors_Information",
+    "Sensors_Information",
+    "Sensors_Information",
+    "Sensors_Information",
+    "Sensors_Information",
+    "Sensors_Information",
+    "Sensors_Information",
+    "Sensors_Information",
+    "Sensors_Information",
+    "Sensors_Information",
+    "Sensors_Information",
+    "Sensors_Information",
+    "Sensors_Information",
+    "Sensors_Information",
+    "Sensors_Information",
+    "Sensors_Information",
+    "Sensors_Information",
+    "Sensors_Information",
+    "Sensors_Information",
+    "Sensors_Information"
+};
+
 const char* g_Telemetry_Readnames[] = {
     "vvcore",
     "vvcore2",
@@ -61,14 +85,20 @@ const char* g_Telemetry_Readnames[] = {
 //
 // Thermostat_SendCurrentTemperature sends a PnP telemetry indicating the current temperature
 //
-void Telemetry_Send(IOTHUB_DEVICE_CLIENT_LL_HANDLE deviceClientLL, char *stringBuffer)
+void Telemetry_Send(IOTHUB_DEVICE_CLIENT_LL_HANDLE deviceClientLL, char* component, char* stringBuffer)
 {
     IOTHUB_MESSAGE_HANDLE messageHandle = NULL;
     IOTHUB_CLIENT_RESULT iothubResult;
+    IOTHUB_MESSAGE_RESULT iothubMessageResult;
+    const char PnP_TelemetryComponentProperty[] = "$.sub";
 
     if ((messageHandle = IoTHubMessage_CreateFromString(stringBuffer)) == NULL)
     {
         printf("IoTHubMessage_CreateFromString failed");
+    }
+    else if ((iothubMessageResult = IoTHubMessage_SetProperty(messageHandle, PnP_TelemetryComponentProperty, component)) != IOTHUB_MESSAGE_OK)
+    {
+        printf("IoTHubMessage_SetProperty=%s failed, error=%d", PnP_TelemetryComponentProperty, iothubMessageResult);
     }
     else if ((iothubResult = IoTHubDeviceClient_LL_SendEventAsync(deviceClientLL, messageHandle, NULL, NULL)) != IOTHUB_CLIENT_OK)
     {
@@ -78,25 +108,25 @@ void Telemetry_Send(IOTHUB_DEVICE_CLIENT_LL_HANDLE deviceClientLL, char *stringB
     IoTHubMessage_Destroy(messageHandle);
 }
 
-void Telemetry_Send_Double(IOTHUB_DEVICE_CLIENT_LL_HANDLE deviceClientLL, char *name, double value)
+void Telemetry_Send_Double(IOTHUB_DEVICE_CLIENT_LL_HANDLE deviceClientLL, char *component, char *name, double value)
 {
-    char stringBuffer[32];
-    const char OneDouble_BodyFormat[] = "{\"%s\":%.02f}";
-    if (snprintf(stringBuffer, sizeof(stringBuffer), OneDouble_BodyFormat, name, value) < 0)
+    char stringBuffer[128];
+    const char BodyFormat[] = "{\"%s\":%.02f}";
+    
+    if (snprintf(stringBuffer, sizeof(stringBuffer), BodyFormat, name, value) < 0)
     {
         printf("snprintf of current temperature telemetry failed");
     }
     else {
-        Telemetry_Send(deviceClientLL, stringBuffer);
+        Telemetry_Send(deviceClientLL, component, stringBuffer);
     }
-
 }
 
-void Telemetry_Send_Vvcore(IOTHUB_DEVICE_CLIENT_LL_HANDLE deviceClientLL)
+/*void Telemetry_Send_Vvcore(IOTHUB_DEVICE_CLIENT_LL_HANDLE deviceClientLL)
 {
     double value = Sensors_Information_Telemetry_ReadVvcore();
     Telemetry_Send_Double(deviceClientLL, "vvcore", value);
-}
+}*/
 
 void Telemetry_Send_All(IOTHUB_DEVICE_CLIENT_LL_HANDLE deviceClientLL)
 {
@@ -104,7 +134,7 @@ void Telemetry_Send_All(IOTHUB_DEVICE_CLIENT_LL_HANDLE deviceClientLL)
     double value;
     for (int i = 0; i < n; i++) {
         value = g_Telemetry_Readfuncs[i]();
-        Telemetry_Send_Double(deviceClientLL, g_Telemetry_Readnames[i], value);
+        Telemetry_Send_Double(deviceClientLL, g_Telemetry_Componentnames[i], g_Telemetry_Readnames[i], value);
     }
 
 }

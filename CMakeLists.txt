@@ -35,7 +35,7 @@ add_subdirectory(azure-iot-sdk-c)
 
 
 
-include_directories(. ./utilities ./SUSI4/include)
+include_directories(. ./utilities ./SUSI4/include ./SusiDevice)
 include_directories(
 ${azure_iot_sdks_SOURCE_DIR}/deps/parson 
 ${azure_iot_sdks_SOURCE_DIR}/iothub_client/samples/pnp/common
@@ -68,4 +68,5 @@ prov_auth_client
 hsm_security_client
 aziotsharedutil
 ${CMAKE_SOURCE_DIR}/SUSI4/lib/x64/Susi4.lib
+${CMAKE_SOURCE_DIR}/SusiDevice/x64/SusiDevice.lib
 )

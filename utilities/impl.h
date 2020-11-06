@@ -121,11 +121,6 @@ char* Device_Detailed_Information_Property_GetLastConnectedAt();
 
 
 
-
-
-
-
-
 char* DeviceInfo_Property_GetManufacturer();
 
 char* DeviceInfo_Property_GetModel();
@@ -144,6 +139,49 @@ char* DeviceInfo_Property_GetTotalMemory();
 
 
 
+bool GPIO_isAvailable(int n);
+bool GPIO_Set(int n, bool v);
+bool GPIO_Get(int n);
+bool GPIO_Set_Direction(int n, int v);
+int GPIO_Get_Direction(int n);
+
+int VGA_GetId();
+int VGA_SetId(int value);
+
+int VGA_GetEnable();
+int VGA_SetEnable(int value);
+
+int VGA_GetBrightness();
+int VGA_SetBrightness(int value);
+
+int VGA_GetLevel();
+int VGA_SetLevel(int value);
+
+int VGA_GetPolarity();
+int VGA_SetPolarity(int value);
+
+int VGA_GetFrequency();
+int VGA_SetFrequency(int value);
+
+
+int SDRAM_GetSocket();
+int SDRAM_SetSocket(int value);
+char* SDRAM_GetPartNumber();
+char* SDRAM_GetMemoryType();
+int SDRAM_GetMemorySpeed();
+char* SDRAM_GetModuleType();
+int SDRAM_GetModuleSize();
+char* SDRAM_GetWeekYear();
+int SDRAM_GetRank();
+int SDRAM_GetBank();
+double SDRAM_GetVoltage();
+double SDRAM_GetTemperature();
+char* SDRAM_GetModuleManufacture();
+char* SDRAM_GetDramManufacture();
+int SDRAM_GetWriteProtection();
+
+
+void Impl_Init();
 
 
 

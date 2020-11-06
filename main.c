@@ -159,6 +159,10 @@ static int Thermostat_DeviceMethodCallback(const char* methodName, const unsigne
 
     *response = NULL;
     *responseSize = 0;
+
+    result = Device_ProcessAllCommands(methodName, payload, size, response, responseSize);
+
+
     /*
     if (strcmp(methodName, g_getMinMaxReport) != 0)
     {

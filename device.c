@@ -8,6 +8,7 @@
 #include "parson.h"
 #include "device.h"
 #include "impl.h"
+#include "commands.h"
 #include "telemetries.h"
 #include "Susi4.h"
 
@@ -55,6 +56,9 @@ bool Device_Init() {
     {
         LogInfo("SUSI_API initial error code %lu.", if_initial);
     }
+
+    Impl_Init();
+
     return BuildUtcTimeFromCurrentTime(g_ProgramStartTime, sizeof(g_ProgramStartTime));
 }
 
@@ -280,5 +284,8 @@ void Device_SendAllTelemetries(IOTHUB_DEVICE_CLIENT_LL_HANDLE deviceClientLL) {
     Telemetry_Send_All(deviceClientLL);
 }
 
+int Device_ProcessAllCommands(const char* methodName, const unsigned char* payload, size_t size, unsigned char** response, size_t* responseSize) {
+    return Command_Parser_All(methodName, payload, size, response, responseSize);
+}
 
 //=======================================================================================================//
