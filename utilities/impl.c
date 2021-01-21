@@ -820,7 +820,9 @@ bool GPIO_Set(int n, bool v) {
     if (bitcheck(SupportOutput, pins)) {
         SupportOutput = 0;
 		unsigned int bits = bitflip(SupportOutput, pins);
-        Status = SusiGPIOSetLevel(id, bits, v);
+		SupportOutput = 0;
+		unsigned int value = v ? bitflip(SupportOutput, pins) : 0;
+		Status = SusiGPIOSetLevel(id, bits, value);
         return true;
     }
     return false;
